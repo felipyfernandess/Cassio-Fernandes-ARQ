@@ -1584,4 +1584,26 @@ footer{
             width: 100%;
         }
     }
+
+    main > .projetos > .texto > h2{
+        width: 100%;
+    }
+
+    main > .fundador > .container > .content > button{
+        width: 250px;
+    }
+
+    main > .servicos > .content > .title{
+        .fundo{
+            font-size: 13vw;
+        }
+
+        .frente{
+            font-size: 6vw
+        }
+
+        .linha{
+            width: 15vw;
+        }
+    }
 }
