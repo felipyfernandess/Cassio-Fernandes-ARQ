@@ -260,6 +260,14 @@ main{
                 font-family: "Gelasio", serif;;
                 font-size: 36px;
                 color: var(--verde-principal);
+                display: inline-block;
+                min-width: 1.2ch;
+                transition: transform ease-in-out 0.3s, opacity ease-in-out 0.3s;
+            }
+
+            strong.is-visible{
+                transform: translateY(0);
+                opacity: 1;
             }
 
             .legenda{

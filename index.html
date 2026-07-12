@@ -14,11 +14,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body id="topo">
     <header>
         <nav>
             <div class="nome-empresa">
-                <a href="#">Cássio</a>
+                <a href="#topo" class="logo-topo">Cássio</a>
             </div>
 
             <div class="menu-toggle">
@@ -28,11 +28,11 @@
             </div>
 
             <div class="links-navegacao">
-                <a href="">PROJETOS</a>
-                <a href="">SOBRE</a>
-                <a href="">FUNDADOR</a>
-                <a href="">SERVIÇOS</a>
-                <a href="">CONTATO</a>
+                <a href="#projetos">PROJETOS</a>
+                <a href="#estudio">SOBRE</a>
+                <a href="#fundador">FUNDADOR</a>
+                <a href="#servicos">SERVIÇOS</a>
+                <a href="#contato">CONTATO</a>
             </div>
         </nav>
     </header>
@@ -62,34 +62,34 @@
 
             <div class="card quantidade-projetos">
                 <div class="texto">
-                    <p><strong>+76</strong></p>
+                    <p><strong class="valor" data-target="76" data-prefix="+">0</strong></p>
                     <p class="legenda">Projetos desenvolvidos com identidade única.</p>
                 </div>
             </div>
 
             <div class="card projetos-exterior">
                 <div class="texto">
-                    <p><strong>+2</strong></p>
+                    <p><strong class="valor" data-target="2" data-prefix="+">0</strong></p>
                     <p class="legenda">Projetos executados para o exterior.</p>
                 </div>
             </div>
 
             <div class="card tempo-atuacao">
                 <div class="texto">
-                    <p><strong>+6 anos</strong></p>
+                    <p><strong class="valor" data-target="6" data-prefix="+" data-suffix=" anos">0</strong></p>
                     <p class="legenda">De atuação no mercado de arquitetura e design de interiores.</p>
                 </div>
             </div>
 
             <div class="card quantidade-estados">
                 <div class="texto">
-                    <p><strong>+8</strong></p>
+                    <p><strong class="valor" data-target="8" data-prefix="+">0</strong></p>
                     <p class="legenda">Estados brasileiros atendidos com soluções exclusivas e personalizadas.</p>
                 </div>
             </div>
         </section>
 
-        <section class="projetos">
+        <section class="projetos" id="projetos">
             <p class="projetos-tag">
                 PROJETOS
             </p>
@@ -173,7 +173,7 @@
             </div>
         </section>
 
-        <section class="estudio">
+        <section class="estudio" id="estudio">
             <div class="content">
                 <div class="titulo">
                     <div class="content-tag">Sobre o estúdio</div>
@@ -213,7 +213,7 @@
             </div>
         </section>
 
-        <section class="fundador">
+        <section class="fundador" id="fundador">
             <div class="container">
                 <div class="content">
                     <div class="content-tag">
@@ -243,7 +243,7 @@
             </div>
         </section>
 
-        <section class="servicos">
+        <section class="servicos" id="servicos">
             <div class="content">
                 <div class="title">
                     <h2 class="fundo">
@@ -307,20 +307,20 @@
         </section>
     </main>
 
-    <footer>
+    <footer id="contato">
         <div class="footer-container">
             <div class="footer-menu">
-                <a href="">PROJETOS</a>
-                <a href="">SOBRE</a>
-                <a href="">FUNDADOR</a>
-                <a href="">SERVIÇOS</a>
-                <a href="">CONTATO</a>
+                <a href="#projetos">PROJETOS</a>
+                <a href="#estudio">SOBRE</a>
+                <a href="#fundador">FUNDADOR</a>
+                <a href="#servicos">SERVIÇOS</a>
+                <a href="#contato">CONTATO</a>
             </div>
 
             <div class="footer-brand">
-                <div class="logo">
+                <a href="#topo" class="logo logo-topo">
                     <img src="assets/images/index/logo-branca.png" alt="Logo">
-                </div>
+                </a>
 
                 <div class="social-icons">
                     <ul>
@@ -362,5 +362,7 @@
     </footer>
     <script src="assets/scripts/servicos-carousel.js"></script>
     <script src="assets/scripts/menu.js"></script>
+    <script src="assets/scripts/numeros-animados.js"></script>
+    <script src="assets/scripts/menu-scroll.js"></script>
 </body>
 </html>
