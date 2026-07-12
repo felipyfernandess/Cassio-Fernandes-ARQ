@@ -775,7 +775,7 @@ main{
             gap: 80px;
             overflow: hidden;
             background-image: url(../images/index/hero.webp);
-            background-size: 105%;
+            background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             padding: 0px 50px 50px;
@@ -1593,13 +1593,19 @@ footer{
         width: 250px;
     }
 
+    main > .fundador {
+        padding-bottom: 70px;
+    }
+
     main > .servicos > .content > .title{
+        margin-top: 30px;
+
         .fundo{
             font-size: 13vw;
         }
 
         .frente{
-            font-size: 6vw
+            font-size: 6vw;
         }
 
         .linha{
