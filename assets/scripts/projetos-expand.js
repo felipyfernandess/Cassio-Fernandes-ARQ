@@ -9,13 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!cards.length) return;
 
     const updateVisibility = (expanded) => {
-        const firstRowTop = cards[0]?.getBoundingClientRect().top ?? 0;
-
-        cards.forEach((card) => {
-            const cardTop = card.getBoundingClientRect().top;
-            const isInFirstRow = cardTop <= firstRowTop + 1;
-            const shouldHide = !expanded && !isInFirstRow;
-
+        cards.forEach((card, index) => {
+            const shouldHide = !expanded && index >= 4;
             card.classList.toggle('is-hidden', shouldHide);
         });
 
