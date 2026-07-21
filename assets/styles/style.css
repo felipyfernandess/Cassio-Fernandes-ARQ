@@ -17,6 +17,16 @@ body{
     --verde-principal: #666F34;
     --footer: #161210;
 }
+
+/* Evita que o Safari aplique a cor azul padrão ou de link visitado. */
+a,
+a:link,
+a:visited,
+a:hover,
+a:active{
+    color: inherit;
+    -webkit-text-fill-color: currentColor;
+}
 ::-webkit-scrollbar{
     width: 5px;
     height: 6px;
@@ -1662,5 +1672,12 @@ footer{
         .linha{
             width: 15vw;
         }
+    }
+}
+
+/* Em telas de toque não há hover confiável: um toque revela os detalhes. */
+@media (hover: none) and (pointer: coarse) {
+    main .projetos .projetos-grade .projetos-card.is-active .legenda{
+        transform: translateY(0);
     }
 }

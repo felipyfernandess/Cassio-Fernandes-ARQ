@@ -27,6 +27,17 @@ document.addEventListener('DOMContentLoaded', () => {
         updateVisibility(!isExpanded);
     };
 
+    // O efeito dos cartões era acionado apenas por :hover. No iPhone isso pode
+    // exigir um toque prolongado; aqui um toque comum revela a legenda.
+    cards.forEach((card) => {
+        card.addEventListener('touchstart', () => {
+            cards.forEach((otherCard) => {
+                if (otherCard !== card) otherCard.classList.remove('is-active');
+            });
+            card.classList.add('is-active');
+        }, { passive: true });
+    });
+
     trigger.addEventListener('click', toggleProjects);
     window.addEventListener('resize', setInitialState);
     window.addEventListener('load', setInitialState);
