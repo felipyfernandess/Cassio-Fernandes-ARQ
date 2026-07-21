@@ -145,7 +145,7 @@ main{
             .texto{
                 display: flex;
                 flex-direction: column;
-                align-items: start;
+                align-items: center;
 
                 p{
                     font-size: 12px;
