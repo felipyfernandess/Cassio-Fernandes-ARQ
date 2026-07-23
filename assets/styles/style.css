@@ -207,7 +207,7 @@ main{
             position: relative;
             isolation: isolate;
             background: linear-gradient(90deg, #FFFCF9, #CCCAC9);
-            transition: transform ease-in-out 0.3s;
+            transition: transform ease-in-out 3s;
 
             &::before{
                 content: '';
@@ -244,7 +244,7 @@ main{
         }
 
         button:hover{
-            transform: translate(3px, -3px);
+            transform: none;
         }
     }
 
@@ -757,7 +757,7 @@ main{
                 }
 
                 button:hover{
-                    transform: translate(3px, -3px);
+                    transform: none;
                 }    
             }
 
