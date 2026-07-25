@@ -2,6 +2,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
 
 ScrollSmoother.create({
     smooth: 1.5,
+    smoothTouch: 0,
     effects: true,
     wrapper: '#smooth-wrapper',
     content: '#smooth-content',
@@ -24,7 +25,8 @@ function animarPagina(){
     });
 
     gsap.from('.button-hero',{
-        filter: 'blur(10px)',
+        y: 20,
+        opacity: 0,
         duration: 1
     });
 
@@ -41,8 +43,9 @@ function animarPagina(){
     });
 
     gsap.from('.projetos-card', {
+        y: 40,
         opacity: 0,
-        filter: 'blur(10px)',
+        // filter: 'blur(1px)',
         stagger: 0.3,
         scrollTrigger: {
             // markers: true,
@@ -67,14 +70,13 @@ function animarPagina(){
 
     gsap.from('.topicos div', {
         y: 40,
-        filter: 'blur(10px)',
         opacity: 0,
         stagger: 0.3,
         scrollTrigger: {
-            markers: true,
+            // markers: true,
             trigger: '.topicos',
             start: '50% 100%',
-            end: '180% 100%',
+            end: '100% 80%',
             scrub: true
         }
     });
