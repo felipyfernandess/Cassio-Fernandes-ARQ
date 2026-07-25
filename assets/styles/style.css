@@ -1093,6 +1093,7 @@ footer{
         .footer-brand{
             display: flex;
             flex-direction: column;
+            align-items: center;
             gap: 15px;
 
             img{
@@ -1130,13 +1131,21 @@ footer{
                             padding: 7px;
                             box-sizing: content-box;
                             width: 20px;
+                            height: 20px;
                             transition: all ease-in-out 0.3s;
                         }
 
+                        .tik-tok svg{
+                            width: 15px;
+                            height: 15px;
+                            padding: 9.5px;
+                        }
+                        
                         svg:hover{
                             fill: var(--verde-principal);
                             border-color: var(--verde-principal);
                         }
+
                     }
                 }
             }
