@@ -9,10 +9,11 @@
 html,
 body{
     overflow-x: hidden;
+    background-color: var(--background-principal);
 }
 
 :root{
-    --background-principal: rgb(15, 15, 15);
+    --background-principal: #0f0f0f;
     --background-secundario: #0F0E0C;
     --verde-principal: #666F34;
     --footer: #161210;
@@ -52,7 +53,7 @@ header{
     width: 100%;
     z-index: 9;
     overflow: visible;
-    background-color: var(--background-principal);
+    background-color: transparent;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 
     nav{
@@ -822,6 +823,8 @@ main{
         width: 100%;
         padding: 0px 13vw 80px;
         background-color: var(--background-principal);
+        position: relative;
+        z-index: 10;
 
         .content{
             position: relative;

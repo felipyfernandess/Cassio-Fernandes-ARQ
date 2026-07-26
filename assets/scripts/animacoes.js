@@ -76,6 +76,65 @@ function animarPagina(){
         }
     });
 
+    gsap.from('.fundador .content', {
+        x: -80,
+        opacity: 0,
+        scrollTrigger: {
+            // markers: true,
+            trigger: '.fundador',
+            start: '30% 100%',
+            end: '50% 80%',
+            scrub: true
+        }
+    });
+
+    gsap.from('.fundador .imagem', {
+        x: 80,
+        opacity: 0,
+        scrollTrigger: {
+            // markers: true,
+            trigger: '.imagem',
+            start: '30% 100%',
+            end: '50% 100%',
+            scrub: true
+        }
+    });
+
+    gsap.from('.servicos .content', {
+        y: 60,
+        opacity: 0,
+        scrollTrigger: {
+            // markers: true,
+            trigger: '.servicos',
+            start: '30% 100%',
+            end: '80% 100%',
+            scrub: true
+        }
+    });
+
+    gsap.from('footer', {
+        y: '-30%',
+        immediateRender: false,
+        scrollTrigger: {
+            trigger: 'footer',
+            // markers: true,
+            scrub: true,
+            invalidateOnRefresh: true,
+            end: '100% 100%' // end scroller-end
+        }
+    });
+
+    // ANIMAR NAV
+
+    gsap.to("header", {
+    backgroundColor: "#0f0f0f",
+    scrollTrigger: {
+        trigger: "body",
+        start: "top top",
+        end: "200 top",
+        scrub: true
+    }
+    });
 
     // ANIMAR PALAVRAS
 
