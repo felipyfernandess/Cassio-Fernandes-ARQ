@@ -48,6 +48,10 @@ a:active{
     height: 0;
 }
 
+a{
+    text-decoration: none;
+}
+
 header{
     position: fixed;
     width: 100%;
