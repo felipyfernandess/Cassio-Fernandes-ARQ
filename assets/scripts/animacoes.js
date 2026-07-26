@@ -2,10 +2,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
 
 ScrollSmoother.create({
     smooth: 1.5,
-    smoothTouch: 0,
-    effects: true,
-    wrapper: '#smooth-wrapper',
-    content: '#smooth-content',
+    effects: true
 });
 
 function animarPagina(){
@@ -36,22 +33,20 @@ function animarPagina(){
         scrollTrigger: {
             trigger: '.projetos',
             // markers: true,
-            start: '20% 100%',
+            start: '0% 100%',
             end: '50% 100%',
             scrub: true
         }
     });
 
     gsap.from('.projetos-card', {
-        y: 40,
-        opacity: 0,
-        // filter: 'blur(1px)',
-        stagger: 0.3,
+        // opacity: 0,
+        filter: 'blur(10px)',
+        stagger: .3,
         scrollTrigger: {
-            // markers: true,
             trigger: '.projetos-grade',
-            start: '0% 100%',
-            end: '110% 100%',
+            start: '0% 80%',
+            end: '100% 70%',
             scrub: true
         }
     });
@@ -62,8 +57,8 @@ function animarPagina(){
         scrollTrigger: {
             trigger: '.estudio',
             // markers: true,
-            start: '30% 100%',
-            end: '80% 100%',
+            start: '10% 100%',
+            end: '100% 80%',
             scrub: true
         }
     });

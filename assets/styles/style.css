@@ -375,8 +375,6 @@ main{
                     width: 100%;
                     padding: 18px 15px 1.2vw;
                     background: rgba(12, 11, 10, 0.664);
-                    backdrop-filter: blur(10px);
-                    -webkit-backdrop-filter: blur(10px);
                     transform: translateY(100%);
                     transition: transform ease-in-out 0.5s;
 
@@ -609,8 +607,6 @@ main{
                 border-radius: 8px;
                 width: 25%;
                 background: rgba(255, 255, 255, 0.04);
-                backdrop-filter: blur(2px);
-                -webkit-backdrop-filter: blur(2px);
                 border: 1px solid rgba(255, 255, 255, 0.08);
                 transition: background ease-in-out 0.3s, border-color ease-in-out 0.3s;
 
@@ -980,8 +976,6 @@ main{
                     padding: 30px 24px;
                     border-radius: 12px;
                     background: rgba(29, 29, 29, 0.075);
-                    backdrop-filter: blur(14px);
-                    -webkit-backdrop-filter: blur(14px);
                     border: 1px solid rgba(255, 255, 255, 0.12);
                     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
                     transition: background ease-in-out 0.3s, border-color ease-in-out 0.3s;
