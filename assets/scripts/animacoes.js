@@ -128,6 +128,7 @@ function animarPagina(){
 
     gsap.to("header", {
     backgroundColor: "#0f0f0f",
+    borderBottom: "1px solid rgba(255, 255, 255, 0.08)",
     scrollTrigger: {
         trigger: "body",
         start: "top top",
