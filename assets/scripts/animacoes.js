@@ -178,4 +178,23 @@ function animarPagina(){
     });
 }
 
-animarPagina();
+const tl = gsap.timeline({
+    onComplete(){
+        gsap.to('#preloader', {
+            opacity: 0,
+            display: 'none'
+        });
+
+        animarPagina();
+    }
+});
+
+tl.to('#preloader path', {
+    duration: 3,
+    strokeDashoffset: 0
+});
+
+tl.to('#preloader path', {
+    duration: 0.7,
+    fill: 'rgb(102, 111, 52)'
+});

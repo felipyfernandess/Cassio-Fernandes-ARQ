@@ -48,6 +48,30 @@ a:active{
     height: 0;
 }
 
+#preloader{
+    width: 100%;
+    height: 100vh;
+    background-color: #0f0f0f;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+
+    svg{
+        width: 25vw;
+        height: auto;
+
+        path{
+            fill: rgba(102, 111, 52, 0.329);
+            stroke: rgb(102, 111, 52);
+            stroke-width: 1px;
+            stroke-dasharray: 770;
+            stroke-dashoffset: 770;
+        }
+    }
+}
+
 a{
     text-decoration: none;
 }
