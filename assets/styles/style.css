@@ -1434,6 +1434,10 @@ footer{
 }
 
 @media screen and (max-width: 1024px){
+    header > nav > .nome-empresa > a{
+        font-size: 18px;
+    }
+
     main > .projetos > .projetos-grade {
         .projetos-card{
             width: 49.3%;
@@ -1548,7 +1552,7 @@ footer{
     }
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 920px){
     header > nav{
         .menu-toggle{
             display: flex;
@@ -1656,6 +1660,10 @@ footer{
 }
 
 @media screen and (max-width: 555px) {
+    header > nav > .nome-empresa > a{
+        font-size: 16px;
+    }
+
     main > .hero > .texto{
         h1{
             width: 80%;
