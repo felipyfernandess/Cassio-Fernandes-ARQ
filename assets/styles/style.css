@@ -1723,3 +1723,13 @@ footer{
         transform: translateY(0);
     }
 }
+
+/* PRELOADER APENAS PARA NOTEBOOK E DESKTOP */
+@media screen and (max-width: 1023px) {
+    #preloader {
+        display: none !important;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+}

@@ -1,11 +1,23 @@
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
 
+
+// ========================================
+// SCROLL SUAVE EM TODOS OS DISPOSITIVOS
+// ========================================
+
 ScrollSmoother.create({
     smooth: 1.5,
     effects: true
 });
 
+
+// ========================================
+// TODAS AS ANIMAÇÕES DA PÁGINA
+// TODOS OS DISPOSITIVOS
+// ========================================
+
 function animarPagina(){
+
     gsap.from('header', {
         opacity: 0,
         duration: 3
@@ -32,7 +44,6 @@ function animarPagina(){
         opacity: 0,
         scrollTrigger: {
             trigger: '.projetos',
-            // markers: true,
             start: '0% 100%',
             end: '50% 100%',
             scrub: true
@@ -40,7 +51,6 @@ function animarPagina(){
     });
 
     gsap.from('.projetos-card', {
-        // opacity: 0,
         filter: 'blur(10px)',
         stagger: .3,
         scrollTrigger: {
@@ -56,7 +66,6 @@ function animarPagina(){
         opacity: 0,
         scrollTrigger: {
             trigger: '.estudio',
-            // markers: true,
             start: '10% 100%',
             end: '100% 80%',
             scrub: true
@@ -68,7 +77,6 @@ function animarPagina(){
         opacity: 0,
         stagger: 0.3,
         scrollTrigger: {
-            // markers: true,
             trigger: '.topicos',
             start: '50% 100%',
             end: '100% 80%',
@@ -80,7 +88,6 @@ function animarPagina(){
         x: -80,
         opacity: 0,
         scrollTrigger: {
-            // markers: true,
             trigger: '.fundador',
             start: '30% 100%',
             end: '50% 80%',
@@ -92,7 +99,6 @@ function animarPagina(){
         x: 80,
         opacity: 0,
         scrollTrigger: {
-            // markers: true,
             trigger: '.imagem',
             start: '30% 100%',
             end: '50% 100%',
@@ -104,7 +110,6 @@ function animarPagina(){
         y: 60,
         opacity: 0,
         scrollTrigger: {
-            // markers: true,
             trigger: '.servicos',
             start: '30% 100%',
             end: '80% 100%',
@@ -117,31 +122,37 @@ function animarPagina(){
         immediateRender: false,
         scrollTrigger: {
             trigger: 'footer',
-            // markers: true,
             scrub: true,
             invalidateOnRefresh: true,
-            end: '100% 100%' // end scroller-end
+            end: '100% 100%'
         }
     });
 
-    // ANIMAR NAV
+
+    // ========================================
+    // ANIMAÇÃO DO HEADER AO ROLAR
+    // ========================================
 
     gsap.to("header", {
-    backgroundColor: "#0f0f0f",
-    borderBottom: "1px solid rgba(255, 255, 255, 0.08)",
-    scrollTrigger: {
-        trigger: "body",
-        start: "top top",
-        end: "200 top",
-        scrub: true
-    }
+        backgroundColor: "#0f0f0f",
+        borderBottom: "1px solid rgba(255, 255, 255, 0.08)",
+        scrollTrigger: {
+            trigger: "body",
+            start: "top top",
+            end: "200 top",
+            scrub: true
+        }
     });
 
-    // ANIMAR PALAVRAS
+
+    // ========================================
+    // SPLIT TEXT - HERO
+    // ========================================
 
     const textoSplithero = document.querySelectorAll('.subtitle');
 
     textoSplithero.forEach(palavra => {
+
         const splitHero = SplitText.create(palavra, {
             type: 'line, words, chars',
             mask: 'lines'
@@ -156,11 +167,19 @@ function animarPagina(){
                 trigger: palavra,
             }
         });
+
     });
 
-    const textoSplitprojeto = document.querySelectorAll('.projetos .texto p');
+
+    // ========================================
+    // SPLIT TEXT - PROJETOS
+    // ========================================
+
+    const textoSplitprojeto =
+        document.querySelectorAll('.projetos .texto p');
 
     textoSplitprojeto.forEach(palavra => {
+
         const splitHero = SplitText.create(palavra, {
             type: 'line, words, chars',
             mask: 'lines'
@@ -175,26 +194,59 @@ function animarPagina(){
                 trigger: palavra,
             }
         });
+
     });
+
 }
 
-const tl = gsap.timeline({
-    onComplete(){
-        gsap.to('#preloader', {
-            opacity: 0,
-            display: 'none'
-        });
 
-        animarPagina();
-    }
+// ========================================
+// PRELOADER APENAS EM NOTEBOOK/DESKTOP
+// ========================================
+
+const mm = gsap.matchMedia();
+
+mm.add("(min-width: 1024px)", () => {
+
+    const tl = gsap.timeline({
+
+        onComplete(){
+
+            gsap.to('#preloader', {
+                opacity: 0,
+                display: 'none'
+            });
+
+            // Inicia as animações após o preloader
+            animarPagina();
+
+        }
+
+    });
+
+
+    tl.to('#preloader path', {
+        duration: 3,
+        strokeDashoffset: 0
+    });
+
+
+    tl.to('#preloader path', {
+        duration: 0.7,
+        fill: 'rgb(102, 111, 52)'
+    });
+
 });
 
-tl.to('#preloader path', {
-    duration: 3,
-    strokeDashoffset: 0
-});
 
-tl.to('#preloader path', {
-    duration: 0.7,
-    fill: 'rgb(102, 111, 52)'
+// ========================================
+// CELULAR E TABLET
+// SEM PRELOADER
+// MAS COM TODAS AS ANIMAÇÕES
+// ========================================
+
+mm.add("(max-width: 1023px)", () => {
+
+    animarPagina();
+
 });
