@@ -869,7 +869,6 @@ main{
             align-items: center;
             gap: 80px;
             overflow: hidden;
-            background-image: url(../images/index/RENDER\ 1\ CERTO.png);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -1740,4 +1739,8 @@ footer{
         visibility: hidden;
         pointer-events: none;
     }
+}
+
+html.sem-preloader #preloader{
+    display: none !important;
 }

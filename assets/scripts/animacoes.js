@@ -206,36 +206,41 @@ function animarPagina(){
 
 const mm = gsap.matchMedia();
 
+const jaViuPreloader = document.documentElement.classList.contains('sem-preloader');
+
 mm.add("(min-width: 1024px)", () => {
 
+    // Já viu o preloader nesta sessão: pula direto para as animações
+    if (jaViuPreloader) {
+        animarPagina();
+        return;
+    }
+
+    // Marca que o preloader já foi exibido
+    try {
+        sessionStorage.setItem('preloaderVisto', 'true');
+    } catch (e) {}
+
     const tl = gsap.timeline({
-
         onComplete(){
-
             gsap.to('#preloader', {
                 opacity: 0,
                 display: 'none'
             });
 
-            // Inicia as animações após o preloader
             animarPagina();
-
         }
-
     });
-
 
     tl.to('#preloader path', {
         duration: 3,
         strokeDashoffset: 0
     });
 
-
     tl.to('#preloader path', {
         duration: 0.7,
         fill: 'rgb(102, 111, 52)'
     });
-
 });
 
 
